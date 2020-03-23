@@ -34,3 +34,21 @@ sudo docker swarm join --token SWMTKN-1-4id94k6hsz2hsd10ew5jdy6pe51joa68c2qjcwob
 
 pssh -h awsnodes.lst -x "-o StrictHostKeyChecking=no -i dockerswarm.pem" -l ubuntu -i 'df -h'
 
+########### docker stack ##########
+
+docker stack deploy --compose-file docker-compose.yml socialnetwork
+
+docker stack rm socialnetwork
+
+docker ps socialnetwork
+
+docker stack ls
+
+sudo docker stack services socialnetwork
+
+docker service ls
+
+#--format "{{.Name}}: {{.Image}}"
+
+sudo docker stack ps --format "{{.Name}}: {{.ID}}: {{.Error}}: {{.Ports}}" socialnetwork
+
