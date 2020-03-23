@@ -32,7 +32,7 @@ sudo docker swarm join --token SWMTKN-1-4id94k6hsz2hsd10ew5jdy6pe51joa68c2qjcwob
 
 ############ pssh #################
 
-pssh -h awsnodes.lst -x "-o StrictHostKeyChecking=no -i dockerswarm.pem" -l ubuntu -i 'df -h'
+pssh -h awsnodes.lst -x "-o StrictHostKeyChecking=no -i /home/nannan/dockerswarm.pem" -l ubuntu -i 'df -h'
 
 ########### docker stack ##########
 
